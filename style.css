@@ -252,3 +252,41 @@ footer
   padding-top: 36px;
   padding-bottom: 31.78px;
 }
+
+.bannarParent
+{
+  float: right;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+}
+.bannar
+{
+  width: 288px;
+  height: 80px;
+  background-color: rgba(95, 223, 91, 1);
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+}
+.bannarDeatail
+{
+  display: flex;
+  color: white;
+  gap: 13px;
+  font-size: 14px;
+}
+
+.lineAddTwo
+{
+  height: 36px;
+  width: 36px;
+  background-color: white;
+  border-radius: 30%;
+}
+

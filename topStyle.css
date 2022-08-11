@@ -10,6 +10,11 @@ header{
   z-index: 100;
 }
 
+body
+{
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
 .headerR
 {
   color: #666666;
@@ -156,8 +161,14 @@ footer
 /*------------------mass three------------- */
 
 
-.massThree
-{
+.lineIntroduce{
+  margin: 0 auto;
+  max-width: 1032px;
+  padding: 0 24px;
+  width: 100%;
+}
+
+.lineIntroduceContainer{
   margin-top: 140px;
   height: 357px;
   background-image: url(./img/bg-line.jpg);
@@ -165,10 +176,10 @@ footer
   border-radius: 40px;
   padding-top: 68px;
   position: relative;
+  text-align: center;
 }
 
-.massThree::before
-{
+.lineIntroduceContainer::before{
   background-color: rgba(0, 113, 188, 0.9);
     content: "";
     height: 100%;
@@ -179,9 +190,12 @@ footer
     border-radius: 40px;
     z-index: 80;
 }
+.jump{
+  position: absolute;
+  right: 20px;
+}
 
-.LINE
-{
+.LINE{
   width: 40px;
   height: 40px;
   background-color: white;
@@ -190,8 +204,7 @@ footer
   z-index: 85;
 }
 
-.info
-{
+.info{
   margin-top: 16px;
   font-size: 14px;
   color: white;
@@ -199,16 +212,13 @@ footer
   z-index: 85;
 }
 
-
-.posseOfficial
-{
+.posseOfficial{
   color: white;
   position: relative;
   z-index: 85;
 }
 
-.lineAdd
-{
+.lineAdd{
   margin-top: 24px;
   display: flex;
   align-items: center;
@@ -221,48 +231,42 @@ footer
   border-radius: 96px;
   position: relative;
   z-index: 85;
+  position: relative;
 }
 
-.footerOne
-{
+.footerOne{
   margin-top: 80px;
   height: 274.22px;
   border-top: 1px solid #EEEEEE;
   border-bottom: 1px solid #EEEEEE;
 }
 
-.posselogo2
-{
+.posselogo2{
   margin-top: 56.05px;
 }
 
-.snsText
-{
+.snsText{
   margin-top: 24.06px;
 }
 
-.sns
-{
+.sns{
   margin-top: 32px;
 }
 
-.footerTwo
-{
+.footerTwo{
   font-size: 10px;
   padding-top: 36px;
   padding-bottom: 31.78px;
 }
 
-.bannarParent
-{
+.bannarParent{
   float: right;
   position: fixed;
   bottom: 0;
   right: 0;
   z-index: 100;
 }
-.bannar
-{
+.bannar{
   width: 288px;
   height: 80px;
   background-color: rgba(95, 223, 91, 1);
@@ -274,16 +278,21 @@ footer
   margin-bottom: 16px;
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
 }
-.bannarDeatail
-{
+
+.bannarJump{
+  margin-left: 20px;
+}
+
+.bannarDeatail{
   display: flex;
   color: white;
   gap: 13px;
   font-size: 14px;
+  justify-content: center;
+  align-items: center;
 }
 
-.lineAddTwo
-{
+.lineAddTwo{
   height: 36px;
   width: 36px;
   background-color: white;

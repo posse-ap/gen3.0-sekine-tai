@@ -16,10 +16,6 @@ header{
   z-index: 100;
 }
 
-body{
-  font-family: 'Noto Sans JP', sans-serif;
-}
-
 .headerR{
   color: #666666;
   display: flex;
@@ -54,7 +50,7 @@ body{
   top: 26px;
 }
 
-/* 本文 */
+/* 本文********************************************* */
 
 .itQuiz{
   background-image: url(./img/quiz/bg-hero.jpg);
@@ -80,7 +76,7 @@ body{
   font-family: "Noto Sans JP";
 }
 
-/* 第一問 */
+/* 第一問 *****************************************/
 
 .questionContainer{
   margin: 0 auto;
@@ -148,7 +144,18 @@ body{
   margin-bottom: 16px;
 }
 
-.falseChoice, .trueChoice{
+
+
+
+/* ************************** */
+
+.choice{
+  
+  padding-left: 24px;
+  padding-right: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 312px;
   height: 80px;
   background: #FFFFFF;
@@ -156,15 +163,19 @@ body{
   border-radius: 8px;
 }
 
-.falseChoiceContainer, .trueChoiceContainer{
-  margin-top: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;  
-  padding: 0 24px;
-  font-size: 18px;
-  font-family: "Noto Sans JP";
+.is-selected{
+  border: 5px solid #0071BC;
+  background: #EFF2F5;
+  color: #0071BC;
 }
+
+.delete{
+  visibility: hidden;
+}
+
+
+/* ******************************* */
+
 
 .itSource{
   max-width: 100%;
@@ -172,6 +183,7 @@ body{
   height: 80px;
   background-color: #F6F6F6;
   border-radius: 8px;
+  margin-bottom: ;
 }
 
 .itSourceContainer{
@@ -194,7 +206,7 @@ body{
   width: 670px;
 }
 
-/* footer----------------------------------------------------------------------------- */
+/* footer************************************--- */
 
 .lineIntroduce{
   margin: 0 auto;
@@ -344,3 +356,66 @@ body{
   gap: 16px;
 }
 
+/* メモ用************************************* */
+
+
+.js-answerBox{
+  display: none;
+}
+
+.is-correct{
+  display: block;
+
+  height: 143px;
+
+  background-color: #FFF2F5;
+
+  margin: 0 auto;
+  max-width: 1032px;
+  padding: 0 40px;
+  width: 100%;
+  border-radius: 8px;
+  padding-top: 24px;
+  margin-bottom: 20px;
+  color: #E34E70;
+}
+
+.is-incorrect{
+  display: block;
+
+  height: 143px;
+
+  background-color: #EFF2F5;
+
+  margin: 0 auto;
+  max-width: 1032px;
+  padding: 0 40px;
+  width: 100%;
+  border-radius: 8px;
+  padding-top: 24px;
+  margin-bottom: 20px;
+  color:  #0071BC;
+}
+
+.ResultDetailContainer{
+  display: flex;
+  gap: 16px;
+  margin-top: 18px;
+  align-items: flex-end;
+}
+
+.Result{
+  font-size: 24px;
+  /* color: #E34E70; */
+}
+
+.A{
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+
+.ResultDetail{
+  font-size: 18px;
+  color: black;
+}

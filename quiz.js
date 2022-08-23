@@ -74,7 +74,7 @@
       answer.addEventListener('click',() =>{
         
         arrows.forEach(arrow =>{
-          arrow.classList.add('delete')
+          arrow.classList.add('delete');
         })
 
         answer.classList.add('is-selected');

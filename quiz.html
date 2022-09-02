@@ -13,14 +13,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
 <script src="./quiz.js" defer></script>
+<script src="./common.js" defer></script>
   <title>クイズ</title>
 </head>
 <body>
-  <header>
-    <h1><img class="posselogo" src="logo.svg"></h1>
+  <header id="js-header">
+    <div class="phoneHeader">
+      <h1>
+        <img class="posselogo" src="logo.svg">
+      </h1>
+      <button class="headerButton" id="js-headerButton"></button>
+    </div>
     <ul class="headerR">
       <div class="RightL">
-        <li>トップページ</li>
+        <li>POSSEとは</li>
         <li>クイズ</li>
       </div>
       <div class="RightR">
@@ -350,7 +356,12 @@
   <footer>
     <div class="lineIntroduce">
       <div class="lineIntroduceContainer">
-          <h2 class="posseOfficial"><img src="./img/icon/icon-line.svg" alt="" class="LINE">POSSE 公式LINE</h2>
+          <h2 class="posseOfficial">
+            <img src="./img/icon/icon-line.svg" alt="" class="LINE">
+            <p>
+              POSSE 公式LINE
+            </p>
+          </h2>
           <p class="info">公式LINEにてご質問を随時受け付けております。<br>
             詳細やPOSSE最新情報につきましては、公式LINEにてお知らせ致しますので<br>
             下記ボタンより友達追加をお願いします！</p>
@@ -368,8 +379,8 @@
       </div>
       <div class="snsText">POSSE公式サイト</div>
       <ul class="sns">
-        <li><a href="https://twitter.com/posse_program"><img src="./img/icon/icon-twitter.svg"></a></li>
-        <li><a href="https://www.instagram.com/posse_programming/"><img src="./img/icon/icon-instagram.svg"></a></li>
+        <li class="snsCircle"><a href="https://twitter.com/posse_program"><img src="./img/icon/icon-twitter.svg"></a></li>
+        <li class="snsCircle"><a href="https://www.instagram.com/posse_programming/"><img src="./img/icon/icon-instagram.svg"></a></li>
       </ul>
     </div>
     <div class="footerTwo">
@@ -379,7 +390,7 @@
       <div class="bannar">
         <ul class="bannarDeatail">
           <li><img src="./img/icon/icon-line.svg" alt="" class="lineAddTwo"></li>
-          <li><p>POSSE公式LINEで<br>最新情報をGET！</p></li>
+          <li><p>POSSE公式LINEで<br class="brFooter">最新情報をGET！</p></li>
           <li><img src="./img/icon/icon-link-light.svg" alt="" class="bannarJump"></li>
         </ul>       
       </div>

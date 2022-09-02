@@ -100,7 +100,7 @@ header{
   border-radius: 8px;
   align-items: center;
   justify-content: center;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Plus Jakarta Sans';
   font-weight: bold;
 }
 
@@ -276,7 +276,6 @@ header{
   margin-right: auto;
   background-color: white;
   border-radius: 96px;
-  position: relative;
   z-index: 85;
   position: relative;
 }

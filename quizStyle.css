@@ -1,4 +1,418 @@
-/* font-family: 'Noto Sans JP', sans-serif; */
+.js-quiz{
+  padding: 0 16px;
+}
+
+
+.posselogo{
+  width: 120px;
+  height: 24px;
+  margin: 16px;
+}
+
+.phoneHeader{
+  display: flex;
+  justify-content: space-between;
+}
+
+header{
+  height: 60px;
+  display: flex;
+  position: sticky;
+  background-color: white;
+  width: 100%;
+  top: 0;
+}
+
+
+
+.clicked::after{
+  top: 50%;
+  transform-origin: 6px;
+  transform: translate(0%, -50%) rotate(-45deg);
+}
+
+.clicked::before{
+  top: 50%;
+  transform-origin: 6px;
+  transform: translate(0%, -50%) rotate(45deg);
+}
+
+.headerButton{
+  height: 40px;
+  position: fixed;
+  right: 36px;
+  top: 8px;
+  width: 40px;
+  z-index: 1000;
+}
+
+.headerButton::before{
+  transform-origin: 6px;
+  background-color: #333;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  transition: transform 0.4s, top 0.4s;
+  width: 34px;
+  top: 12px;
+}
+
+.headerButton::after{
+  transform-origin: 6px;
+  background-color: #333;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  transition: transform 0.4s, top 0.4s;
+  width: 34px;
+  top: 28px;
+}
+
+.headerR{
+  display: none;
+}
+
+.itQuiz{
+  background-image: url(./img/quiz/bg-hero.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 159px;
+}
+
+.itQuizDetail{
+  padding-top: 60px;
+  padding-left: 32px;
+}
+
+.PosseWork{
+  font-size: 14px;
+  color: white;
+}
+
+.itQuizParagraph{
+  font-size: 28px;
+  color: white;
+}
+
+/* ******************************** */
+
+.questionNumber{
+  height: 52px;
+  width: 68px;
+  background-color: #0071BC;
+  border-radius: 8px;
+  color: white;
+  font-family: 'Plus Jakarta Sans';
+  font-size: 24px;
+  padding-top: 13px;
+  padding-left: 16px;
+  margin-top: 40px;
+}
+
+.questionParagraph{
+  font-size: 18px;
+  margin-top: 16px;
+  font-family: 'Noto Sans JP';
+}
+
+.ItImg ,.xTech{
+  width: 100%;
+  margin-top: 24px;
+}
+
+.answerNumber{
+  background-color: #E34E70;
+  width: 50px;
+  height: 52px;
+  color: white;
+  font-size: 24px;
+  font-family: 'Plus Jakarta Sans';
+  border-radius: 8px;
+  padding-top: 8px;
+  padding-left: 16px;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+.choice{
+  height: 52px;
+  width: 100%;
+  border: 4px solid #EEEEEE;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+/* あとで、選択肢の装飾を行う */
+
+.itSource{
+  width: 100%;
+  background-color: #F6F6F6;
+  height: 92px;
+  border-radius: 8px;
+}
+
+.itSourceContainer{
+  display: flex;
+  padding-top: 35px;
+  padding-left: 24px;
+  gap: 16px;
+  font-size: 14px;
+  font-family: "Noto Sans JP";
+}
+
+/* **********クイズ******** */
+
+.lineIntroduce{
+  padding: 0 16px;
+}
+
+.lineIntroduceContainer{
+  margin-top: 120px;
+  width: 100%;
+  height: 372px;
+  background-image: url(./img/bg-line.jpg);
+  background-size: cover;
+  border-radius: 28px;
+  text-align: center;
+  padding-top: 40px;
+  padding-left: 24px;
+  padding-right: 24px;
+  position: relative;
+  margin-bottom: 72px;
+}
+
+.lineIntroduceContainer::before{
+  background-color: rgba(0, 113, 188, 0.9);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  border-radius: 28px;
+  z-index: 10;
+}
+
+.LINE{
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px; 
+}
+
+.posseOfficial{
+  color: white;
+  font-size: 24px;
+  position: relative;
+  z-index: 40;
+}
+
+.info{
+  color: white;
+  margin-top: 8px;
+  line-height: 160%;
+  position: relative;
+  z-index: 40;
+}
+
+/* zindex 後で処理しておく */
+
+.lineAdd{
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  border-radius: 98px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 32px;
+  position: relative;
+  z-index: 40;
+}
+
+.jump{
+  position: absolute;
+  right: 20px;
+}
+
+.footerOne{
+  border-top: 1px solid #EEEEEE;
+  border-bottom: 1px solid #EEEEEE;
+  padding-top: 56px;
+  text-align: center;
+}
+
+.posselogo2{
+  width: 160px;
+}
+
+.snsText{
+  margin-top: 25px;
+  font-family: "Plus Jakarta Sans";
+  color: #666666;
+}
+
+.sns{
+  margin-top: 24px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.snsCircle{
+  width: 50px;
+  height: 50px;
+  border: #EEEEEE solid;
+  border-radius: 25px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foooterTwo{
+  margin-top: 32px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.footerTwo{
+  text-align: center;
+  height: 70px;
+  padding-top: 32px;
+  color: #666666;
+  font-family: "Plus Jakarta Font";
+  font-size: 12.6px;
+}
+
+.bannarParent{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.bannar{
+  width: 100%;
+  height: 48px;
+  background-color: #5FDF5B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+}
+
+.lineAddTwo{
+  width: 28px;
+  height: 28px;
+  background-color: white;
+  border-radius: 6px;
+}
+
+.bannarDeatail{
+  display: flex;
+  color: white;
+  font-family: "Noto Sans JP";
+  font-size: 14px;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.brFooter{
+  display: none;
+}
+
+.A{
+  display: none;
+}
+
+.js-answerBox{
+  display: none;
+}
+
+.is-correct{
+  display: block;
+
+  height: 143px;
+
+  background-color: #FFF2F5;
+
+  margin: 0 auto;
+  max-width: 1032px;
+  padding: 0 40px;
+  width: 100%;
+  border-radius: 8px;
+  padding-top: 24px;
+  margin-bottom: 20px;
+  color: #E34E70;
+}
+
+.is-incorrect{
+  display: block;
+
+  height: 143px;
+
+  background-color: #EFF2F5;
+
+  margin: 0 auto;
+  max-width: 1032px;
+  padding: 0 40px;
+  width: 100%;
+  border-radius: 8px;
+  padding-top: 24px;
+  margin-bottom: 20px;
+  color:  #0071BC;
+}
+
+.ResultDetailContainer{
+  display: flex;
+  gap: 16px;
+  margin-top: 18px;
+  align-items: flex-end;
+}
+
+.Result{
+  font-size: 24px;
+  /* color: #E34E70; */
+}
+
+.A{
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+
+.ResultDetail{
+  font-size: 18px;
+  color: black;
+}
+
+.is-selected{
+  border: 5px solid #0071BC;
+  background: #EFF2F5;
+  color: #0071BC;
+}
+
+.delete{
+  visibility: hidden;
+}
+
+/* ***************************** */
+
+@media (min-width: 768px){
+
 
 main{
   display: flex;
@@ -14,6 +428,10 @@ header{
   padding-right: 24px;
   padding-left: 24px;
   z-index: 100;
+}
+
+.headerButton{
+  display: none;
 }
 
 .headerR{
@@ -102,7 +520,7 @@ header{
   border-radius: 8px;
   align-items: center;
   justify-content: center;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Plus Jakarta Sans';
   font-weight: bold;
 }
 
@@ -311,14 +729,8 @@ header{
   justify-content: center;
 }
 
-.bannarParent{
-  float: right;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  z-index: 100;
-}
 .bannar{
+  padding: 0 24px;
   width: 288px;
   height: 80px;
   background-color: rgba(95, 223, 91, 1);
@@ -329,6 +741,11 @@ header{
   margin-right: 16px;
   margin-bottom: 16px;
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  float: right;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
 }
 
 .bannarJump{
@@ -419,4 +836,6 @@ header{
 .ResultDetail{
   font-size: 18px;
   color: black;
+}
+
 }

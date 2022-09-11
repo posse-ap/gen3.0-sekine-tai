@@ -24,22 +24,32 @@
       </h1>
       <button class="headerButton" id="js-headerButton"></button>
     </div>
-    <ul class="headerR">
+    <ul class="headerR" id="js-menu">
       <div class="RightL">
         <li>POSSEとは</li>
         <li>クイズ</li>
       </div>
       <div class="RightR">
-        <li>
-        <div href="https://twitter.com/posse_program" class="twitterLink">
-          <img class="circle" src="./img/icon/icon-twitter.svg">
+        <div class="hidden lineAddThree">
+          <img src="./img/icon/icon-line.svg" alt="" class="lineIcon">
+          <p>POSSE公式LINEを追加</p>
         </div>
-      </li>
-      <li>
-        <div href="https://www.instagram.com/posse_programming/" class="instaLink">         
-          <img class="circle" src="./img/icon/icon-instagram.svg">
+        <div class="hidden posseWeb">
+          <p>POSSE公式サイト</p>
+          <img src="./img/icon/icon-link-gray-dark.svg" alt="" class="icon">
         </div>
-      </li>
+        <div class="links">
+          <li>
+            <div href="https://twitter.com/posse_program" class="twitterLink">
+              <img class="circle" src="./img/icon/icon-twitter.svg">
+            </div>
+          </li>
+          <li>
+            <div href="https://www.instagram.com/posse_programming/" class="instaLink">         
+              <img class="circle" src="./img/icon/icon-instagram.svg">
+            </div>
+          </li>
+        </div>
       </div>
     </ul>
   </header>
@@ -387,7 +397,7 @@
       <p>&copy;2022 POSSE</p>
     </div>
     <div class="bannarParent">
-      <div class="bannar">
+      <div class="bannar" id="bannar">
         <ul class="bannarDeatail">
           <li><img src="./img/icon/icon-line.svg" alt="" class="lineAddTwo"></li>
           <li><p>POSSE公式LINEで<br class="brFooter">最新情報をGET！</p></li>

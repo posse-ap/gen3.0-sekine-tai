@@ -16,7 +16,7 @@
 
 header{
   height: 60px;
-  display: flex;
+  /* display: flex; */
   position: sticky;
   background-color: white;
   width: 100%;
@@ -405,14 +405,114 @@ header{
   color: #0071BC;
 }
 
+
 .delete{
   visibility: hidden;
 }
+
+
+@media(max-width: 768px){
+
+  .is-picked{
+    height: 100vh;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 10000;
+    padding-top: 76px;
+    font-size: 24px;
+  }
+
+  .is-open{
+    z-index: 10000;
+  }
+
+  .RightL{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 354px;
+  }
+
+  .RightR{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .lineIcon{
+    width: 30px;
+    background-color: white;
+    border-radius: 2px;
+  }
+
+  .lineAddThree{
+    background-color: #5FDF5B;
+    border-radius: 20px;
+    color: white;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 24px;
+    margin-left: 16px;
+    margin-right: 16px;
+    width: 343px;
+  }
+
+  .icon{
+    height: 13px;
+  }
+
+  .posseWeb{
+    font-size: 14px;
+    color: gray;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .links{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .twitterLink, .instaLink{
+    border: #333 solid 1px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .opened{
+    display: none;
+  }
+}
+
+
+
+
+
 
 /* ***************************** */
 
 @media (min-width: 768px){
 
+
+.hidden{
+  display: none;
+}
 
 main{
   display: flex;
@@ -441,6 +541,11 @@ header{
   margin: 16px ;
 }
 
+.links{
+  display: flex;
+  gap: 16px;
+}
+
 .twitterLink,.instaLink{
   border: solid 1px;
   border-radius: 50%;
@@ -460,7 +565,7 @@ header{
   align-items: center;
   display: flex;
   margin: 16px;
-  gap: 16px;
+  gap: 24px;
 }
 
 .posselogo{
@@ -839,3 +944,4 @@ header{
 }
 
 }
+

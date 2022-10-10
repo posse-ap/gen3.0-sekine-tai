@@ -166,6 +166,7 @@ allQuiz.forEach(quiz => {
       answerText.innerText = quizArray[selectedQuiz].answers[correctNumber];
       setTitle(answerTitle, isCorrect);
       setClassName(answerBox, isCorrect);
+      
     })
   })
 })

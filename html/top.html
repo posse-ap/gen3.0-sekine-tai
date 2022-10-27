@@ -10,6 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/top.css">
   <link rel="stylesheet" href="../css/reset.css">
+  <script src="../js/jquery-3.6.1.min.js" defer></script>
+  <script src="../js/top.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 </head>
 <body>
   <navbar>
@@ -21,47 +24,199 @@
         <p class="navbarSubtitle">4th week</p>
       </div>
     </div>
-    <button class="navbarButton">
+    <button class="navbarButton modalOpen buttonOpen">
       記録・投稿
     </button>
   </navbar>
+  <div class="modalWindow">
+    <div class="modalContentsWrapper">
+      <div class="modalNav">
+        <button class="modalClose modalButton">✕<button>
+      </div>
+      <div class="modalContents">
+        <div class="modalLeft">
+          <div class="modalDate">
+            <p>学習日</p>
+            <div class="modalInput">
+              <input type="date">
+            </div>
+          </div>
+          <div class="modalContent">
+            <p>学習コンテンツ(複数選択可)</p>
+            <div class="choices">
+              <div>
+                <label class="modalCheckbox">
+                  <input type="checkbox">N予備校
+                </label>
+              </div>
+              <div>
+                <label class="modalCheckbox">
+                  <input type="checkbox">ドットインストール
+                </label>
+              </div>
+              <div>
+                <label class="modalCheckbox">
+                  <input type="checkbox">POSSE課題
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="modalLanguage">
+            <p>学習言語(複数選択可)</p>
+            <div class="choices">
+              <div>
+                <label class="modalCheckbox">
+                  <input type="checkbox">HTML
+                </label>
+              </div>
+              <div>
+                <label class="modalCheckbox">
+                  <input type="checkbox">CSS
+                </label>
+              </div>
+              <div>
+                <label class="modalCheckbox">
+                  <input type="checkbox">JavaScript
+                </label>
+              </div>
+              <div>
+                <label class="modalCheckbox">
+                  <input type="checkbox">PHP
+                </label>
+              </div>
+              <div>
+                <label class="modalCheckbox">
+                  <input type="checkbox">Laravel
+                </label>
+              </div>
+              <div>
+                <label class="modalCheckbox">
+                  <input type="checkbox">SQL
+                </label>
+              </div>
+              <div>
+                <label class="modalCheckbox">
+                  <input type="checkbox">SHELL
+                </label>
+              </div>
+              <div>
+                <label class="modalCheckbox">
+                  <input type="checkbox">情報システム基礎知識(その他)
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modalRight">
+          <div class="modalHour">
+            <p>学習時間</p>
+            <div class="modalHourInput">
+              <input type="text">
+            </div>
+          </div>
+          <div class="modalTwitter">
+            <p>Twitter用コメント</p>
+            <div class="modalCommentInput">
+              <input type="text">
+            </div>
+            <input type="checkbox">Twitterにシェアする
+          </div>
+        </div>
+      </div>
+      <div class="modalFooterWrapper">
+        <div class="modalFooter modalPost loadingOpen">
+          <button class="">記録・投稿</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ******************以下ローディング画面************************************ -->
+  <div class="modalLoading">
+    <div class="loaderWrapper">
+      <div class="loader"></div>
+    </div>
+  </div>
+
+<!-- ******************完了画面*************************************: -->
+
+  <div class="modalPosted">
+    <div class="modalPostedNav">
+      <button class="modalClose modalButton">✕<button>
+    </div>
+    <div class="modalPostImgWrapper">
+      <img src="../img/top/postdone.png" alt="" class="modalPostImg">
+    </div>
+  </div>
+
+
+  <!-- ***************************************************************** -->
+  <div id="overLay" class="overLay">
+
+  </div>
   <div class="contentsWrapper">
     <div class="contents">
       <div class="leftContents">
         <div class="counters">
           <div class="counter">
-            <p class="counterHeadline">Today</p>
-            <p class="counterValue">3</p>
-            <p class="counterUnit">hour</p>
+            <div>
+              <p class="counterHeadline">Today</p>
+              <p class="counterValue">3</p>
+              <p class="counterUnit">hour</p>
+            </div>
           </div>
           <div class="counter">
-            <p class="counterHeadline">Month</p>
-            <p class="counterValue">120</p>
-            <p class="counterUnit">hour</p>
+            <div>
+              <p class="counterHeadline">Month</p>
+              <p class="counterValue">120</p>
+              <p class="counterUnit">hour</p>
+            </div>
           </div>
           <div class="counter">
-            <p class="counterHeadline">Total</p>
-            <p class="counterValue">1348</p>
-            <p class="counterUnit">hour</p>
+            <div>
+              <p class="counterHeadline">Total</p>
+              <p class="counterValue">1348</p>
+              <p class="counterUnit">hour</p>
+            </div>
           </div>          
         </div>
-        <div class="graph">
-            
-        </div>
+        <canvas class="leftGraph" id="leftGraph">
+            グラフ
+        </canvas>
       </div>
       <div class="rightContents">
         <div class="learningLanguage">
           <div class="pieChartHeadline">
-            <p>学習言語</p>
+            <div>
+              <p>学習言語</p>
+            </div>
+            <div>
+              <canvas id="learningLanguageGraph">
+
+              </canvas>
+            </div>
           </div>
         </div>
         <div class="learningContents">
           <div class="pieChartHeadline">
-            <p>学習コンテンツ</p>
+            <div>
+              <p>学習コンテンツ</p>
+            </div>
+            <div>
+              <canvas id="learningContentsGraph">
+                
+              </canvas>
+            </div>
           </div>
 
         </div>
       </div>
+    </div>
+  </div>
+  <div class="datePage">
+    <div class="dateWrapper">
+      <div class="leftTriangle"></div>
+      <p>2020年10月</p>
+      <div class="rightTriangle"></div>
     </div>
   </div>
 </body>

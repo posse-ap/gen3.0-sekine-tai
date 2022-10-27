@@ -26,27 +26,273 @@ navbar{
   background-color: #157EC5;
 }
 
+/* **********************modal************** */
+
+
+
+.modalWindow{
+  display: none;
+  /* ここを変えるんだよ */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #FFFFFF;
+  z-index: 11;
+  padding: 2rem;
+
+  border-radius: 40px;
+  width: 70%;
+  height: 70%;
+}
+
+.modalNav{
+  height: 30px;
+}
+
+.modalButton{
+  font-size: 30px;
+  background-color: #F5F5F8;
+  border-radius: 50%;
+  float: right;
+}
+
+.modalContents{
+  display: flex;
+  gap: 40px;
+}
+
+.modalLeft{
+  width: 50%;
+  height: 100%;
+}
+
+.modalRight{
+  width: 50%;
+  height: 100%;
+}
+
+.modalInput{
+  background-color: #F5F5F8;
+  font-size: 25px;
+  border-radius: 10px;
+}
+
+.modalContent{
+  margin-top: 20px;
+}
+
+.modalLanguage{
+  margin-top: 20px;
+}
+
+.choices{
+  margin-top: 10px;
+  gap: 20px;
+  display: flex;
+}
+
+.modalHourInput{
+  margin-top: 10px;
+  background-color: #F5F5F8;
+  height: 30px;
+  width: 100%;
+}
+
+.modalCommentInput{
+  background-color: #F5F5F8;
+  height: 180px;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+.modalFooterWrapper{
+  justify-content: center;
+  display: flex;
+}
+
+.modalFooter{
+  display: flex;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  justify-content: center;
+  border-radius: 30px;
+  color: white;
+  background-color: #157EC5;
+}
+
+/* 閉じるボタンは後追加 */
+
+.overLay{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+
+/* **********以下ローディング********************* */
+
+
+.modalLoading{
+  display: none;
+  /* ここを変えるんだよ */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #FFFFFF;
+  z-index: 11;
+  padding: 2rem;
+  border-radius: 40px;
+  width: 70%;
+  height: 70%;
+  margin: auto;
+}
+
+.loaderWrapper{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  position: absolute;
+
+  font-size: 10px;
+  margin: 50px auto;
+  text-indent: -9999em;
+  width: 11em;
+  height: 11em;
+  border-radius: 50%;
+  background: #0C75BF;
+  background: -moz-linear-gradient(left, #0C75BF 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, #0C75BF 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, #0C75BF 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(left, #0C75BF 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, #0C75BF 10%, rgba(255, 255, 255, 0) 42%);
+  position: relative;
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.loader:before {
+  width: 50%;
+  height: 50%;
+  background: #ffffff;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+.loader:after {
+  background: white;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+/* *****modaldone************************ */
+
+.modalPosted{
+  display: none;
+  /* ここを変えるんだよ */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #FFFFFF;
+  z-index: 11;
+  padding: 2rem;
+
+  border-radius: 40px;
+  width: 70%;
+  height: 70%;
+}
+
+.modalPostImgWrapper{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalPostImg{
+  object-fit: cover;
+  height: 300px;
+}
+
+
+
+
+/* ****************modal finish**************** */
+
 .contents{
   width: 100%;
   max-width: 1032px;
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   text-align: center;
   gap: 20px;
 }
 
-.leftContents{
-  display: flex;
-  justify-content: center;
-}
+
+/* ******************************************* */
 
 .contentsWrapper{
   /* display: flex; */
   text-align: center;
   display: flex;
   justify-content: center;
-  padding: 0 40px;
+  padding: 20px 40px;
   background-color: #F5F5F8;
+}
+
+.leftContents{
+  width: 50%;
 }
 
 .counters{
@@ -60,9 +306,11 @@ navbar{
   height: 150px;
   width: 160px;
   background-color: white;
-  text-align: center;
   border-radius: 20px;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 45px;
 }
 
 .counterHeadline{
@@ -78,7 +326,20 @@ navbar{
   color: #97B9D1;
 }
 
+.leftGraph{
+  width: 100%;
+  height: 100%;
+}
+
+.graph{
+  height: 300px;
+  background-color: white;
+}
+
+/* ******************************************* */
+
 .rightContents{
+  width: 50%;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -90,4 +351,35 @@ navbar{
 
 .learningContents{
   background-color: white;
+}
+
+
+/* ******************footer************ */
+
+.leftTriangle{
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-right: 10px solid black;
+  border-bottom: 10px solid transparent;
+}
+
+.rightTriangle{
+  width: 0;
+  height: 0;
+  border-left: 10px solid black;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.datePage{
+  background-color: #F5F5F8;
+  display: flex;
+  justify-content: center;
+}
+
+.dateWrapper{
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
 }

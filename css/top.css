@@ -265,14 +265,54 @@ navbar{
   height: 300px;
 }
 
+/* ********************* */
+
+.modalCalender{
+  display: none;
+  /* ここ😡😡😡😡を変えるんだよ */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #FFFFFF;
+  z-index: 11;
+  padding: 2rem;
+
+  border-radius: 40px;
+  width: 70%;
+  height: 70%;
+}
+
+table{
+  border-collapse: collapse;
+}
 
 
+th,
+td{
+  padding: 8px;
+  text-align: center;
+}
+
+td.disabled{
+  opacity: 0.3;
+}
+
+td.today{
+  font-weight: bold;
+}
+
+#prev,
+#next{
+  cursor: pointer;
+  user-select: none;
+}
 
 /* ****************modal finish**************** */
 
 .contents{
   width: 100%;
-  max-width: 1032px;
+  max-width: px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -346,13 +386,20 @@ navbar{
 }
 
 .learningLanguage{
+  width: 100%;
+  max-width: 400px;
   background-color: white;
 }
 
 .learningContents{
+  width: 100%;
+  max-width: 400px;
   background-color: white;
 }
 
+.pieChart{
+  width: 100%;
+}
 
 /* ******************footer************ */
 

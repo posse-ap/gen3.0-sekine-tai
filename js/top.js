@@ -1,5 +1,6 @@
 'use strict';
 {
+  
 
 
   $(function(){
@@ -32,7 +33,6 @@
 
   window.onload = function () {
 
-
     // ******************棒グラフ***************
 
     let context = document.getElementById('leftGraph').getContext('2d');
@@ -40,35 +40,34 @@
     new Chart(context, {
       type: 'bar',
       data: {
-        labels: ['',2,'',4,'',6,'',8,'',10,'',12,'',14,'',16,'',18,'',20,'',22,'',24,'',26,'',28,'',30,'',],
+        labels: ['',2,'',4,'',6,'',8,'',10,'',12,'',14,'',16,'',18,'',20,'',22,'',24,'',26,'',28,'',30],
 
         // x軸の中身を記述
 
         datasets: [{
-          data: [3,4,5,3,0,0,4,2,2,8,8,2,2,1,7,4,4,3,3,3,2,2,6,2,2,1,1,1,1,7,8],
+          backgroundColor: "#017AC5",
+          data: ['3','4','5','3','0','0','4','2','2','8','8','2','2','1','7','4','4','3','3','3','2','2','6','2','2','1','1','1','7','8'],
         }],
       },
       options: {
         scales: {
-          xAxes: [
-            {
-              display: false,
-              scaleLabel:{
-                display: true,
+          y:{
+            ticks:{
+              callback: function(value,index,values){
+                return value + 'h';
               },
-              ticks:{
-                display: false,
-              }
-            }
-          ],
-          yAxes: [
-            {
+              stepSize: 2,
+            },
+            grid :{
               display: false,
-              ticks:{
-                display: false,
-              }
+            },
+          },
+          x:{
+            ticks: {
+              display: true,
+              drawTicks: false,
             }
-          ]
+          }
         },
         plugins:{
           legend:{
@@ -85,13 +84,21 @@
 
     new Chart(contextTwo, {
       type: 'doughnut',
+      options:{
+        plugins:{
+          legend:{
+            position: "bottom",
+          },
+        },
+      },
       data:{
         labels:["HTML","CSS","JavaScript","PHP","Laravel","SQL","SHELL","その他"],
+        render: "percentage",
         datasets:[{
-          backgroundColor:[],
+          backgroundColor:["#0345EC","#0F71BD","#20BDDE","#3CCEFE","#B29EF3","#6D46EC","#4A17EF","#3105C0"],
           data:[30,20,10,5,5,20,20,10]
         }]
-      }
+      },
     })
 
 
@@ -101,22 +108,27 @@
 
     new Chart(contextThree, {
       type: 'doughnut',
+      options:{
+        plugins:{
+          legend:{
+            position: "bottom",
+          }
+        }
+      },
       data:{
         labels:["N予備校","ドットインストール","課題"],
         datasets:[{
-          backgroundColor:[],
+          backgroundColor:["#0345EC","#0F71BD","#20BDDE"],
           data:[40,20,40],
         }]
       }
-    })
-
-
-
-
-
+    }) 
     
+    
+
   }
 
+  
 
 
 }

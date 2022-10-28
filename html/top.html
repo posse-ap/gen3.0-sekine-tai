@@ -10,9 +10,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/top.css">
   <link rel="stylesheet" href="../css/reset.css">
+  <script src="../js/calender.js" defer></script>
   <script src="../js/jquery-3.6.1.min.js" defer></script>
   <script src="../js/top.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <!-- <script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js" defer></script> -->
 </head>
 <body>
   <navbar>
@@ -148,11 +150,45 @@
     </div>
   </div>
 
+  <!-- *****************カレンダー**********************: -->
+
+  <div class="modalCalender">
+    <div class="modalCalenderNav"></div>
+    <div class="modalCalenderWrapper ">
+      <table>
+        <thead>
+          <tr>
+            <th id="prev">&laquo;</th>
+            <th id="title" colspan="5">2020/05</th>
+            <th id="next">&raquo;</th>
+          </tr>
+          <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td id="today" colspan="7">決定</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
 
   <!-- ***************************************************************** -->
   <div id="overLay" class="overLay">
 
   </div>
+
   <div class="contentsWrapper">
     <div class="contents">
       <div class="leftContents">
@@ -203,7 +239,6 @@
             </div>
             <div>
               <canvas id="learningContentsGraph">
-                
               </canvas>
             </div>
           </div>

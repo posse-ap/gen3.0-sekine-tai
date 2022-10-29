@@ -108,6 +108,7 @@
 
           })
 
+          
       })
       document.querySelector('tbody').appendChild(tr);
     })

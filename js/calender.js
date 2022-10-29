@@ -106,12 +106,6 @@
 
           inputData.value = clickedDate;
 
-          // alert('押したンゴ');
-          console.log(title);
-          console.log(clickedDate);
-          console.log(inputData.value);
-
-
           })
 
       })

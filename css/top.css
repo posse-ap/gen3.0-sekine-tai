@@ -57,6 +57,13 @@ navbar{
   float: right;
 }
 
+.modalBack{
+  font-size: 30px;
+  background-color: #F5F5F8;
+  border-radius: 50%;
+  float: left;
+}
+
 .modalContents{
   display: flex;
   gap: 40px;

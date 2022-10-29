@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="【アカウント名(例：@santmove_com)】" />
+  <meta name="twitter:title" content="【シェアするページのタイトル】" />
+  <meta name="twitter:description" content="【シェアするページの概要】" />
+  <meta name="twitter:image" content="【シェアするページのアイコン画像(絶対パス)】" />
+  <meta name="twitter:url" content="【シェアするページのURL】" />
+
   <title>トップページ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,8 +20,10 @@
   <script src="../js/calender.js" defer></script>
   <script src="../js/jquery-3.6.1.min.js" defer></script>
   <script src="../js/top.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-  <!-- <script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js" defer></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0-rc.1/dist/chartjs-plugin-datalabels.min.js" integrity="sha256-Oq8QGQ+hs3Sw1AeP0WhZB7nkjx6F1LxsX6dCAsyAiA4=" crossorigin="anonymous" defer></script>
+
 </head>
 <body>
   <navbar>
@@ -40,7 +49,7 @@
           <div class="modalDate">
             <p>学習日</p>
             <div class="modalInput">
-              <input type="date">
+              <input id="modalInput">
             </div>
           </div>
           <div class="modalContent">
@@ -96,7 +105,7 @@
                   <input type="checkbox">SQL
                 </label>
               </div>
-              <div>
+              <!-- <div>
                 <label class="modalCheckbox">
                   <input type="checkbox">SHELL
                 </label>
@@ -105,7 +114,7 @@
                 <label class="modalCheckbox">
                   <input type="checkbox">情報システム基礎知識(その他)
                 </label>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -119,15 +128,15 @@
           <div class="modalTwitter">
             <p>Twitter用コメント</p>
             <div class="modalCommentInput">
-              <input type="text">
+              <input type="text" id="postText">
             </div>
-            <input type="checkbox">Twitterにシェアする
+            <input type="checkbox" id="shareTwitter">Twitterにシェアする
           </div>
         </div>
       </div>
       <div class="modalFooterWrapper">
         <div class="modalFooter modalPost loadingOpen">
-          <button class="">記録・投稿</button>
+          <button>記録・投稿</button>
         </div>
       </div>
     </div>
@@ -153,13 +162,15 @@
   <!-- *****************カレンダー**********************: -->
 
   <div class="modalCalender">
-    <div class="modalCalenderNav"></div>
+    <div class="modalNav">
+      <button class="modalBack">←<button>
+    </div>
     <div class="modalCalenderWrapper ">
       <table>
         <thead>
           <tr>
             <th id="prev">&laquo;</th>
-            <th id="title" colspan="5">2020/05</th>
+            <th id="title" colspan="5"></th>
             <th id="next">&raquo;</th>
           </tr>
           <tr>
@@ -176,7 +187,7 @@
         </tbody>
         <tfoot>
           <tr>
-            <td id="today" colspan="7">決定</td>
+            <td id="select" class="select" colspan="7">決定</td>
           </tr>
         </tfoot>
       </table>

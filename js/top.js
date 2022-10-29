@@ -1,5 +1,11 @@
 'use strict';
 {
+
+
+  function openTwitter(text,url,hash,account) {
+    var turl = "https://twitter.com/intent/tweet?text="+text+"&url="+url+"&hashtags="+hash+"&via="+account;
+    window.open(turl,'_blank');
+  }
   
 
 
@@ -9,17 +15,48 @@
       $('#overLay, .modalWindow').fadeIn();
     });
 
+    $('.modalInput').click(function(){
+      $('#overLay, .modalCalender').fadeIn();
+      // $('.modalWindow').fadeOut();
+    })
+
     $('.modalClose').click(function(){
       $('#overLay, .modalWindow').fadeOut();
     })
+    
+    $('.modalBack').click(function(){
+      $('#overLay, .modalWindow').fadeIn();
+      $('.modalCalender').fadeOut();
+    })
+
+    $('.select').click(function(){
+      $('.modalCalender').fadeOut();
+    })
 
     $('.modalPost').click(function(){
+
       $('.modalWindow').fadeOut();
       $('.modalLoading').fadeIn();
+
+      const share = document.getElementById('shareTwitter').checked;
+
+      console.log(share);
+
+      if(share == true){
+
+        const postText = document.getElementById('postText');
+
+      const text = postText.value;
+
+      openTwitter(text,"","","");
+
+      }
+
       setTimeout(function(){
         $('.modalLoading').fadeOut();
         $('.modalPosted').fadeIn();
       },3000);
+
     })
 
     $('.modalPostedNav').click(function(){
@@ -89,14 +126,21 @@
           legend:{
             position: "bottom",
           },
+          datalabels:{
+            color:"white",
+            formatter: function(value,context){
+              return value.toString()+ '%';
+            }
+          }
         },
       },
+      plugins: [ChartDataLabels],
       data:{
         labels:["HTML","CSS","JavaScript","PHP","Laravel","SQL","SHELL","その他"],
         render: "percentage",
         datasets:[{
           backgroundColor:["#0345EC","#0F71BD","#20BDDE","#3CCEFE","#B29EF3","#6D46EC","#4A17EF","#3105C0"],
-          data:[30,20,10,5,5,20,20,10]
+          data:[30,20,10,5,5,10,10,10]
         }]
       },
     })
@@ -112,23 +156,28 @@
         plugins:{
           legend:{
             position: "bottom",
+          },
+          datalabels:{
+            color:"white",
+            formatter: function(value,context){
+              return value.toString()+ '%';
+            }
           }
         }
       },
+      plugins: [ChartDataLabels],
       data:{
         labels:["N予備校","ドットインストール","課題"],
         datasets:[{
           backgroundColor:["#0345EC","#0F71BD","#20BDDE"],
           data:[40,20,40],
-        }]
+        }],
       }
     }) 
     
     
 
   }
-
-  
 
 
 }

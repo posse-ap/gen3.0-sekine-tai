@@ -63,6 +63,7 @@
     }
   }
 
+
   function renderWeeks(){
     const title = `${year}/${String(month + 1).padStart(2,'0')}`;
     document.getElementById('title').textContent = title;
@@ -83,6 +84,7 @@
     weeks.forEach(week =>{
       const tr = document.createElement('tr');
       week.forEach(date => {
+
         const td = document.createElement('td');
 
         td.textContent = date.date;
@@ -93,6 +95,25 @@
           td.classList.add('disabled');
         }
         tr.appendChild(td);
+
+        td.addEventListener('click',()=>{
+
+          const yearMonth = document.getElementById('title');
+
+          const clickedDate = yearMonth.innerHTML + '/' +td.innerHTML;
+          
+          const inputData = document.getElementById('modalInput');
+
+          inputData.value = clickedDate;
+
+          alert('押したンゴ');
+          console.log(title);
+          console.log(clickedDate);
+          console.log(inputData.value);
+
+
+          })
+
       })
       document.querySelector('tbody').appendChild(tr);
     })
@@ -130,7 +151,5 @@
 
     createCalender();
   });
-
-
   createCalender();
 }

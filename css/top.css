@@ -67,6 +67,7 @@ navbar{
 .modalContents{
   display: flex;
   gap: 40px;
+  width: 100%;
 }
 
 .modalLeft{
@@ -87,16 +88,21 @@ navbar{
 
 .modalContent{
   margin-top: 20px;
+  width: 100%;
 }
 
 .modalLanguage{
   margin-top: 20px;
+  width: 100%;
 }
 
 .choices{
+  width: 100%;
   margin-top: 10px;
   gap: 20px;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .modalHourInput{
@@ -112,14 +118,8 @@ navbar{
   width: 100%;
 }
 
-
-
-
-
-
-
-
 .modalFooterWrapper{
+  margin-top: 30px;
   justify-content: center;
   display: flex;
 }
@@ -276,7 +276,6 @@ navbar{
 
 .modalCalender{
   display: none;
-  /* ここ😡😡😡😡を変えるんだよ */
   position: fixed;
   top: 50%;
   left: 50%;
@@ -306,7 +305,9 @@ td.disabled{
 }
 
 td.today{
-  font-weight: bold;
+  background-color: #0C75BF;
+  color: white;
+  border-radius: 20px;
 }
 
 #prev,
@@ -319,7 +320,7 @@ td.today{
 
 .contents{
   width: 100%;
-  max-width: px;
+  max-width: 2000px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -336,6 +337,7 @@ td.today{
   justify-content: center;
   padding: 20px 40px;
   background-color: #F5F5F8;
+  width: 100%;
 }
 
 .leftContents{
@@ -393,18 +395,28 @@ td.today{
 }
 
 .learningLanguage{
-  width: 100%;
+  width: 50%;
   max-width: 400px;
   background-color: white;
 }
 
 .learningContents{
-  width: 100%;
+  width: 50%;
   max-width: 400px;
   background-color: white;
 }
 
 .pieChart{
+  width: 100%;
+}
+
+.graphWrapper{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.rightGraph{
   width: 100%;
 }
 
@@ -436,4 +448,130 @@ td.today{
   width: 200px;
   display: flex;
   justify-content: space-between;
+}
+
+.phoneFooterButton{
+  display: none;
+}
+
+.modalCalenderWrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.tableWrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.title{
+  text-align: center;
+}
+
+table{
+  width: 50%;
+  line-height: 3;
+}
+
+.day{
+  color: #A2B8C8;
+}
+
+.select{
+  width: 200px;
+  background-color: #1A86CD;
+  color: white;
+  border-radius: 20px;
+}
+
+
+
+@media (max-width: 768px){
+
+  .navbarButton{
+    display: none;
+  }
+
+  .contents{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 100%;
+  }
+
+  .leftContents{
+    width: 100%;
+  }
+
+  .rightContents{
+    width: 100%;
+  }
+  
+  .phoneFooterButton{
+    display: block;
+    width: 300px;
+  }
+
+  .phoneFooterButtonWrapper{
+    margin: 20px 0px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .modalWindow{
+    /* display: block; */
+    width: 100%;
+    bottom: 0;
+    height: 110%;
+    transform: translate(-50%,-25%);
+  }
+
+  .modalContents{
+    display: block;
+    width: 100%;
+  }
+
+  .labels{
+    height: 20px;
+    margin-bottom: 30px;
+  }
+
+  .modalCommentInput{
+    height: 30px;
+  }
+
+  .modalLoading{
+    width: 100%;
+    bottom: 0;
+    height: 80%;
+    transform: translate(-50%,-10%);
+  }
+
+  .modalPosted{
+    width: 100%;
+    bottom: 0;
+    height: 80%;
+    transform: translate(-50%,-25%);
+  }
+
+  .modalCalender{
+    width: 100%;
+    bottom: 0;
+    height: 110%;
+    transform: translate(-50%,-25%);
+  }
+
+  .modalLeft{
+    width: 100%;
+  }
+
+  .modalRight{
+    width: 100%;
+  }
+
+
 }

@@ -75,42 +75,42 @@
           <div class="modalLanguage">
             <p>学習言語(複数選択可)</p>
             <div class="choices">
-              <div>
+              <div class="labels">
                 <label class="modalCheckbox">
                   <input type="checkbox">HTML
                 </label>
               </div>
-              <div>
+              <div class="labels">
                 <label class="modalCheckbox">
                   <input type="checkbox">CSS
                 </label>
               </div>
-              <div>
+              <div class="labels"> 
                 <label class="modalCheckbox">
                   <input type="checkbox">JavaScript
                 </label>
               </div>
-              <div>
+              <div class="labels">
                 <label class="modalCheckbox">
                   <input type="checkbox">PHP
                 </label>
               </div>
-              <div>
+              <div class="labels">
                 <label class="modalCheckbox">
                   <input type="checkbox">Laravel
                 </label>
               </div>
-              <div>
+              <div class="labels">
                 <label class="modalCheckbox">
                   <input type="checkbox">SQL
                 </label>
               </div>
-              <div>
+              <div class="labels">
                 <label class="modalCheckbox">
                   <input type="checkbox">SHELL
                 </label>
               </div>
-              <div>
+              <div class="labels">
                 <label class="modalCheckbox">
                   <input type="checkbox">情報システム基礎知識(その他)
                 </label>
@@ -166,21 +166,23 @@
       <button class="modalBack">←<button>
     </div>
     <div class="modalCalenderWrapper ">
-      <table>
-        <thead>
-          <tr>
-            <th id="prev">&laquo;</th>
-            <th id="title" colspan="5"></th>
-            <th id="next">&raquo;</th>
+      <div class="tableWrapper">
+
+        <table>
+          <thead>
+            <tr>
+              <th id="prev">&laquo;</th>
+              <th id="title" colspan="5" class="title"></th>
+              <th id="next">&raquo;</th>
           </tr>
           <tr>
-            <th>Sun</th>
-            <th>Mon</th>
-            <th>Tue</th>
-            <th>Wed</th>
-            <th>Thu</th>
-            <th>Fri</th>
-            <th>Sat</th>
+            <th class="day">Sun</th>
+            <th class="day">Mon</th>
+            <th class="day">Tue</th>
+            <th class="day">Wed</th>
+            <th class="day">Thu</th>
+            <th class="day">Fri</th>
+            <th class="day">Sat</th>
           </tr>
         </thead>
         <tbody>
@@ -192,9 +194,10 @@
         </tfoot>
       </table>
     </div>
+    </div>
   </div>
 
-
+  
   <!-- ***************************************************************** -->
   <div id="overLay" class="overLay">
 
@@ -236,8 +239,8 @@
             <div>
               <p>学習言語</p>
             </div>
-            <div>
-              <canvas id="learningLanguageGraph">
+            <div class="graphWrapper">
+              <canvas id="learningLanguageGraph" class="rightGraph">
 
               </canvas>
             </div>
@@ -248,8 +251,8 @@
             <div>
               <p>学習コンテンツ</p>
             </div>
-            <div>
-              <canvas id="learningContentsGraph">
+            <div class="graphWrapper">
+              <canvas id="learningContentsGraph" class="rightGraph">
               </canvas>
             </div>
           </div>
@@ -264,6 +267,11 @@
       <p>2020年10月</p>
       <div class="rightTriangle"></div>
     </div>
+  </div>
+  <div class="phoneFooterButtonWrapper">
+    <button class="navbarButton modalOpen buttonOpen phoneFooterButton">
+      記録・投稿
+    </button>
   </div>
 </body>
 </html>

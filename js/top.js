@@ -133,6 +133,7 @@
             }
           }
         },
+        responsive: true,
       },
       plugins: [ChartDataLabels],
       data:{
@@ -163,7 +164,8 @@
               return value.toString()+ '%';
             }
           }
-        }
+        },
+        responsive: true,
       },
       plugins: [ChartDataLabels],
       data:{

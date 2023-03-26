@@ -29,13 +29,21 @@ CREATE TABLE hours_contents (
 );
 
 CREATE TABLE hours_languages (
+    id COMMENT 'ID',
+    language_id INT COMMENT '学習言語ID',
+    hour_id
+    INT COMMENT '学習時間ID',
+    FOREIGN KEY (`language_id`) REFERENCES languages(`id`),
+    FOREIGN KEY (`hour_id`) REFERENCES hours(`id`)
+);
+
+CREATE TABLE languages_sum (
     id INT AUTO_INCREMENT PRIMARY KEY COMMENT 'ID',
     language_id INT COMMENT '学習言語ID',
     hour_id  INT COMMENT '学習時間ID',
     FOREIGN KEY (`language_id`) REFERENCES languages(`id`),
     FOREIGN KEY (`hour_id`) REFERENCES hours(`id`)
 );
-
 
 
 INSERT INTO `hours` VALUES

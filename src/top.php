@@ -580,6 +580,36 @@ $json_learning_content_hours = json_encode($per_content);
         }],
       }
     }) 
+
+        // ***********円グラフ２**************
+
+        let contextThree = document.getElementById('learningContentsGraph').getContext('2d');
+
+new Chart(contextThree, {
+  type: 'doughnut',
+  options:{
+    plugins:{
+      legend:{
+        position: "bottom",
+      },
+      datalabels:{
+        color:"white",
+        formatter: function(value,context){
+          return value.toString()+ '%';
+        }
+      }
+    },
+    responsive: true,
+  },
+  plugins: [ChartDataLabels],
+  data:{
+    labels:<?php echo ($json_learning_content);?>,
+    datasets:[{
+      backgroundColor:<?php echo ($json_learning_content_color);?>,
+      data:<?php echo ($json_learning_content_hours);?>,
+    }],
+  }
+}) 
     
   }
 

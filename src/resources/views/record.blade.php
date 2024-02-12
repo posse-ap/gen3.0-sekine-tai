@@ -105,9 +105,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/reset.css"">
     <link rel="stylesheet" href="../css/top.css">
-    <!-- <script src="../ph1-webapp-develop/src/js/calender.js" defer></script> -->
-    <!-- <script src="../ph1-webapp-develop/src/js/jquery-3.6.1.min.js" defer></script> -->
-    <!-- <script src="../ph1-webapp-develop/src/js/top.js" defer></script> -->
+    <script src="{{asset('/js/calendar.js')}}" defer></script>
+    <script src="{{asset('/js/jquery-3.6.1.min.js')}}" defer></script>
+    <script src="{{asset('/js/top.js')}}" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"
         integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
@@ -364,19 +364,15 @@
             記録・投稿
         </button>
     </div>
-    <script src="../ph1-webapp-develop/src/js/calender.js"></script>
-    <script src="../ph1-webapp-develop/src/js/jquery-3.6.1.min.js"></script>
+</body>
+</html>
     <script>
         {
-
-
             function openTwitter(text, url, hash, account) {
                 var turl = "https://twitter.com/intent/tweet?text=" + text + "&url=" + url + "&hashtags=" + hash + "&via=" +
                     account;
                 window.open(turl, '_blank');
             }
-
-
 
             // $(function(){
 
@@ -554,6 +550,3 @@
             }
         }
     </script>
-</body>
-
-</html>

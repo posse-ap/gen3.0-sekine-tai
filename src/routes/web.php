@@ -8,8 +8,11 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TopController;
 use App\Http\Controllers\RecordController;
+use App\Http\Controllers\ContentController;
+use App\Http\Controllers\LanguageController;
 
 
+//user管理系
 Route::get('/', function () {
     return view('welcome');
 });
@@ -20,64 +23,60 @@ Route::get('/admin',function(){
 
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
 
-
-// Route::get('questionsList',QuizzeController::class,'questionsList')->name('questionsList');
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('questionsList',[QuestionsController::class,'index']);
+Route::get('/users',[UserController::class,'index'])->name('users.index');
+Route::get('/users/{user}/edit',[UserController::class, 'edit'])->name('users.edit');
+Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
+Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+Route::get('/users/create',[UserController::class,'create'])->name('users.create');
+Route::post('/users/store',[UserController::class, 'store'])->name('users.store');
 
-Route::get('questionsList/create',[QuestionsController::class,'create']);
+//コンテンツ、言語管理
+// routes/web.php
 
-Route::post('questionsList',[QuestionsController::class,'store'])->name('questionsList.store');
+Route::get('/contents', [ContentController::class, 'index'])->name('contents.index');
+Route::get('/contents/create', [ContentController::class, 'create'])->name('contents.create');
+Route::post('/contents/store', [ContentController::class, 'store'])->name('contents.store');
+Route::get('/contents/{content}/edit', [ContentController::class, 'edit'])->name('contents.edit');
+Route::put('/contents/{content}', [ContentController::class, 'update'])->name('contents.update');
+Route::delete('/contents/{content}', [ContentController::class, 'destroy'])->name('contents.destroy');
 
-Route::get('questionsList/create',[QuestionsController::class,'quizzesSelect']);
+Route::get('/languages', [LanguageController::class, 'index'])->name('languages.index');
+Route::get('/languages/create', [LanguageController::class, 'create'])->name('languages.create');
+Route::post('/languages/store', [LanguageController::class, 'store'])->name('languages.store');
+Route::get('/languages/{language}/edit', [LanguageController::class, 'edit'])->name('languages.edit');
+Route::put('/languages/{language}', [LanguageController::class, 'update'])->name('languages.update');
+Route::delete('/languages/{language}', [LanguageController::class, 'destroy'])->name('languages.destroy');
 
-Route::post('post', [PostController::class,'store'])
-->name('post.store');
+//論理削除の実装
+// routes/web.php
 
-Route::get('post/create',[PostController::class,'create']);
+Route::delete('/contents/{content}/delete', [ContentController::class, 'delete'])->name('contents.delete');
+Route::post('/contents/{content}/restore', [ContentController::class, 'restore'])->name('contents.restore');
 
-Route::get('/test',[TestController::class,'test'])
-->name('test');
+Route::delete('/languages/{language}/delete', [LanguageController::class, 'delete'])->name('languages.delete');
+Route::post('/languages/{language}/restore', [LanguageController::class, 'restore'])->name('languages.restore');
 
-Route::get('/users',[UserController::class,'users'])
-->name('users');
+//記録投稿
+// routes/web.php
 
-Route::get('/top',[TopController::class,'top'])
-->name('top');
+use App\Http\Controllers\LearningRecordController;
 
-Route::get('post',[PostController::class,'index']);
+// ... 他のルートの定義
 
-Route::get('quizzes',[QuizzeController::class, 'quizzes'])->name('quizzes.index')->middleware('admin');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/learning_records/create', [LearningRecordController::class, 'create'])->name('learning_records.create');
+    Route::post('/learning_records', [LearningRecordController::class, 'store'])->name('learning_records.store');
+    Route::get('/learning_records/statistics', [LearningRecordController::class, 'showStatistics'])->name('learning_records.statistics');
+});
 
-Route::get('quizzes/show/{quizze}',[QuizzeController::class,'show'])->name('quizze.show')->middleware('admin');
+use App\Http\Controllers\NewsController;
 
-Route::delete('quizzes/{quizze}/questions/{question}/delete', [QuizzeController::class, 'deleteQuestion'])->name('quizze.delete-question')->middleware('admin');
-
-
-Route::get('quizzes/edit/{quizze}',[QuizzeController::class,'edit'])->name('quizze.edit')->middleware('admin');
-
-Route::patch('quizze/{quizze}',[QuizzeController::class, 'update'])->name('quizze.update')->middleware('admin');
-
-Route::delete('quizze/{quizze}',[QuizzeController::class,'destroy'])->name('quizze.destroy')->middleware('admin');
-
-Route::get('quizzes/create',[QuizzeController::class,'create']);
-
-Route::post('quizzes',[QuizzeController::class,'store'])->name('quizzes.store');
-
-
-Route::put('quizzes/update-question/{quizze}/{question}', [QuizzeController::class, 'updateQuestion'])
-    ->name('quizze.update-question')
-    ->middleware('admin');
-
-Route::get('quizzes/show/{quizze}/edit-question/{question}',[QuizzeController::class,'editQuestion'])->name('quizze.edit-question');
-
-// Route::patch('quizees/{quizze}',[QuizzeController::class,'updateQuestion'])->name('quizze.update-question');
-
-
+Route::get('/news',[NewsController::class,'index']);
+Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
 
 /*
 |--------------------------------------------------------------------------
@@ -99,3 +98,8 @@ Route::get('/record',function(){
 Route::get('/record',[RecordController::class,'sumAll','sumToday'])->name('record')->middleware('auth');;
 
 require __DIR__.'/auth.php';
+
+//api呼び出し
+use App\Http\Controllers\HomeController;
+
+Route::get('/api', [HomeController::class, 'index']);

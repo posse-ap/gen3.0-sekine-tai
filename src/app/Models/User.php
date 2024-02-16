@@ -42,4 +42,21 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // ここから外部テーブルとのリレーション
+
+    public function studyRecords()
+    {
+        return $this->hasMany(StudyRecord::class);
+    }
+
+    public function studyLanguages()
+    {
+        return $this->belongsToMany(Language::class, 'study_languages');
+    }
+
+    public function studyContents()
+    {
+        return $this->belongsToMany(Content::class, 'study_contents');
+    }
 }
